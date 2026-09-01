@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Driver Application » Vesta Sport</title>
+<meta name="description" content="Apply to race for Vesta Sport as a driver, engineer or spotter.">
+<meta property="og:title" content="Driver Application » Vesta Sport">
+<meta property="og:description" content="Apply to race for Vesta Sport as a driver, engineer or spotter.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230a1a4a'/%3E%3Cstop offset='.5' stop-color='%232f62ff'/%3E%3Cstop offset='1' stop-color='%23e0102b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='8' fill='url(%23g)'/%3E%3Cpath d='M16 20h8l8 18 8-18h8L34 48h-4z' fill='white'/%3E%3C/svg%3E">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<button class="drawer-btn" id="drawerBtn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="drawer">
+  <i></i><i></i><i></i>
+</button>
+<div class="scrim" id="scrim"></div>
+<nav class="drawer" id="drawer" aria-label="Main">
+  <div class="lbl">Menu</div>
+  <a href="index.html">Home</a>
+    <a href="team.html">iRacing Team</a>
+    <a href="partners.html">Partners</a>
+    <a href="contact.html">Contact</a>
+    <a href="apply.html">Driver application</a>
+</nav>
+
+<div class="topbar">
+  <div class="wrap">
+    <a class="logo" href="index.html">
+      <span class="tile">VTS</span>
+      <span class="name">VESTA SPORT<small>RACING TEAM</small></span>
+    </a>
+    <nav class="mainnav" aria-label="Primary">
+        <a href="team.html">iRacing Team</a>
+        <a href="partners.html">Partners</a>
+        <a href="contact.html">Contact</a>
+        <a href="apply.html" aria-current="page">Driver application</a></nav>
+  </div>
+</div>
+<main id="main">
+<div class="crumbs">
+  <div class="wrap"><a href="index.html">Home</a><span class="sep">&rsaquo;</span><span>Driver Application</span></div>
+</div>
+
+<section class="hero page">
+  <!-- HERO IMAGE - swap assets/img/apply-hero.jpg for your own photo -->
+  <div class="hero-media"><img src="assets/img/apply-hero.jpg" alt=""></div>
+  <div class="hero-inner">
+    <div class="kicker">Driver application</div><h1>Apply as a team member</h1>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap form">
+    <p class="rv" style="text-align:center;color:var(--grey);margin-bottom:40px">Do you want to join our collective of (sim)racing fanatics? Fill in the form below and get in touch with us.</p>
+
+    <!-- OPTIONAL NOTICE - delete this block when not needed -->
+    <div class="notice rv">
+      <b>Applications are open</b>
+      We review every application. Depending on the racing calendar it can take us a couple of weeks to get back to you &mdash; thanks for your patience.
+    </div>
+
+    <form class="rv" data-demo>
+      <div class="frow">
+        <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" required></div>
+        <div class="field"><label for="f-mail">Email</label><input id="f-mail" name="email" type="email" required></div>
+      </div>
+      <div class="frow">
+        <div class="field"><label for="f-dis">Discord username</label><input id="f-dis" name="discord"></div>
+        <div class="field"><label for="f-age">Age</label><input id="f-age" name="age" type="number" min="14" max="99"></div>
+      </div>
+      <div class="frow">
+        <div class="field"><label for="f-id">iRacing ID</label><input id="f-id" name="iracing_id"></div>
+        <div class="field"><label for="f-ir">Your current iRating</label><input id="f-ir" name="irating"></div>
+      </div>
+      <div class="field"><label for="f-shot">Screenshot of your iRating stats</label><input id="f-shot" name="screenshot" type="file" accept="image/*"></div>
+      <div class="field"><label for="f-hear">Where did you hear about us?</label><input id="f-hear" name="source"></div>
+      <div class="field"><label for="f-exp">What is your overall experience in sim racing?</label><textarea id="f-exp" name="experience"></textarea></div>
+      <div class="field"><label for="f-league">What is your experience in league racing (IVRA, 24H Series, IMSA Esports, VCO, ACI ESport or similar)?</label><textarea id="f-league" name="leagues"></textarea></div>
+      <div class="field"><label for="f-teams">Have you been part of a sim racing team before? If yes, which one(s) and in what role?</label><textarea id="f-teams" name="teams"></textarea></div>
+      <div class="field"><label for="f-goals">What are your personal goals in sim racing?</label><textarea id="f-goals" name="goals"></textarea></div>
+      <div class="field"><label for="f-why">Why do you specifically want to join Vesta Sport?</label><textarea id="f-why" name="why"></textarea></div>
+      <div class="field"><label for="f-bring">What do you bring to a team besides pace?</label><textarea id="f-bring" name="bring"></textarea></div>
+      <div class="field"><label for="f-class">Which car class do you see yourself focusing on? GTP, LMP2, GT3, GT4, TCR, Cup cars, formula&hellip;</label><input id="f-class" name="car_class"></div>
+      <div class="frow">
+        <div class="field"><label for="f-country">Where do you live (country)?</label><input id="f-country" name="country"></div>
+        <div class="field"><label for="f-lang">What languages do you speak, and at what level?</label><input id="f-lang" name="languages"></div>
+      </div>
+      <div class="field"><label for="f-about">Tell us a bit about yourself, inside and outside sim racing</label><textarea id="f-about" name="about"></textarea></div>
+      <button class="submit" type="submit">Send in application</button>
+      <div class="form-note">Your application will be sent securely.</div>
+    </form>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="foot-media"><img src="assets/img/footer.jpg" alt="" loading="lazy"></div>
+  <div class="wrap foot-inner">
+    <!-- PARTNER LOGOS - replace each .fslot with <img src="assets/img/partner-x.png" alt="..."> -->
+    <div class="foot-partners">
+      <div class="fslot">PARTNER</div>
+      <div class="fslot">PARTNER</div>
+      <div class="fslot">PARTNER</div>
+      <div class="fslot">PARTNER</div>
+    </div>
+    <div class="foot-links">
+      <a href="privacy-policy.html">Privacy policy</a>
+      <a href="mailto:info@vestasport.it">info@vestasport.it</a>
+      <div class="cr">&copy; <span data-year></span> Vesta Sport ASD</div>
+      <div class="made">Professional sim racing team &mdash; Italy</div>
+    </div>
+  </div>
+</footer>
+<script src="assets/app.js"></script>
+</body>
+</html>
