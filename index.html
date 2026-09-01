@@ -1,1 +1,564 @@
-test
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vesta Sport — Professional Sim Racing Team</title>
+<meta name="description" content="Vesta Sport ASD is a professional sim racing and esports team competing in endurance, sprint and single-seater championships on iRacing.">
+<meta property="og:title" content="Vesta Sport — Professional Sim Racing Team">
+<meta property="og:description" content="Endurance. Sprint. Single-seater. A professional esports racing team built on engineering, preparation and race craft.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700;1,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230a1a4a'/%3E%3Cstop offset='.5' stop-color='%231b45e0'/%3E%3Cstop offset='1' stop-color='%23c8102e'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='32' fill='url(%23g)'/%3E%3Cpath d='M16 20h8l8 18 8-18h8L34 48h-4z' fill='white'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#04060b;
+    --ink-2:#080c14;
+    --surface:#0d121c;
+    --surface-2:#121926;
+    --line:rgba(255,255,255,.09);
+    --line-strong:rgba(255,255,255,.18);
+    --text:#eef1f7;
+    --muted:#8b95a8;
+    --blue:#1b45e0;
+    --blue-light:#4d7bff;
+    --red:#e0102b;
+    --grad:linear-gradient(115deg,#0a1a4a 0%,#1b45e0 42%,#c8102e 100%);
+    --maxw:1240px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--ink);color:var(--text);
+    font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--red);color:#fff}
+
+  .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .display{
+    font-family:"Barlow Condensed","Inter",sans-serif;
+    text-transform:uppercase;font-weight:800;line-height:.92;letter-spacing:-.01em;
+  }
+  .eyebrow{
+    font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;
+    font-weight:700;letter-spacing:.22em;font-size:.82rem;color:var(--muted);
+    display:flex;align-items:center;gap:12px;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--red);display:block}
+  .muted{color:var(--muted)}
+
+  /* ---------- header ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    transition:background .3s ease,border-color .3s ease,backdrop-filter .3s;
+    border-bottom:1px solid transparent;
+  }
+  header.solid{background:rgba(4,6,11,.86);backdrop-filter:blur(14px);border-bottom-color:var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+  .brand{display:flex;align-items:center;gap:13px}
+  .mark{width:38px;height:38px;border-radius:50%;background:var(--grad);display:grid;place-items:center;flex:0 0 auto}
+  .mark span{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:.9rem;letter-spacing:.02em;color:#fff}
+  .wordmark{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;font-weight:800;font-size:1.24rem;line-height:.95;letter-spacing:.04em}
+  .wordmark small{display:block;font-size:.58rem;letter-spacing:.34em;color:var(--muted);font-weight:600}
+  .menu{display:flex;align-items:center;gap:34px}
+  .menu a{
+    font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;font-weight:600;
+    letter-spacing:.13em;font-size:.92rem;color:#c3cad8;position:relative;padding:4px 0;
+  }
+  .menu a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--red);transition:width .25s}
+  .menu a:hover{color:#fff}
+  .menu a:hover::after{width:100%}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;font-weight:700;
+    letter-spacing:.14em;font-size:.92rem;padding:13px 26px;border:1px solid var(--line-strong);
+    background:transparent;color:#fff;cursor:pointer;transition:.25s;clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);
+  }
+  .btn:hover{background:#fff;color:#04060b;border-color:#fff}
+  .btn-primary{background:var(--red);border-color:var(--red)}
+  .btn-primary:hover{background:#fff;border-color:#fff;color:#04060b}
+  .burger{display:none;width:44px;height:44px;border:1px solid var(--line-strong);background:none;cursor:pointer;padding:0;align-items:center;justify-content:center;flex-direction:column;gap:5px}
+  .burger i{display:block;width:18px;height:2px;background:#fff;transition:.25s}
+  .burger.open i:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .burger.open i:nth-child(2){opacity:0}
+  .burger.open i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .mobile-menu{display:none;flex-direction:column;background:rgba(4,6,11,.98);border-top:1px solid var(--line);padding:14px 28px 26px}
+  .mobile-menu a{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.14em;font-weight:600;padding:14px 0;border-bottom:1px solid var(--line);font-size:1.05rem}
+  .mobile-menu.show{display:flex}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;padding:120px 0 0}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-bg::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(120% 90% at 78% 18%,rgba(27,69,224,.30) 0%,transparent 58%),
+      radial-gradient(90% 80% at 12% 88%,rgba(224,16,43,.22) 0%,transparent 60%),
+      linear-gradient(180deg,#04060b 0%,#070b14 55%,#04060b 100%);
+  }
+  .grid-lines{
+    position:absolute;inset:0;opacity:.5;
+    background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+    background-size:74px 74px;
+    mask-image:radial-gradient(circle at 50% 40%,#000 20%,transparent 78%);
+    -webkit-mask-image:radial-gradient(circle at 50% 40%,#000 20%,transparent 78%);
+  }
+  .streaks{position:absolute;inset:0;overflow:hidden}
+  .streak{position:absolute;height:1px;width:42vw;background:linear-gradient(90deg,transparent,rgba(120,160,255,.55),transparent);animation:dash 5.5s linear infinite;opacity:0}
+  @keyframes dash{0%{transform:translateX(-60vw);opacity:0}12%{opacity:1}88%{opacity:1}100%{transform:translateX(130vw);opacity:0}}
+  .hero-inner{position:relative;z-index:2;width:100%;padding-bottom:60px}
+  .hero h1{margin:22px 0 0;font-size:clamp(3.2rem,10.5vw,9.2rem)}
+  .hero h1 .out{
+    -webkit-text-stroke:1.5px rgba(255,255,255,.55);color:transparent;
+  }
+  .hero h1 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p.lead{max-width:600px;margin:28px 0 0;font-size:1.09rem;color:#b3bccc;font-weight:300}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
+  .scrollcue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:3;font-family:"Barlow Condensed",sans-serif;letter-spacing:.28em;font-size:.7rem;color:var(--muted);text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:10px}
+  .scrollcue::after{content:"";width:1px;height:46px;background:linear-gradient(#5c6a80,transparent);animation:cue 2s ease-in-out infinite}
+  @keyframes cue{0%,100%{opacity:.3;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+
+  /* ---------- marquee ---------- */
+  .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--ink-2);overflow:hidden;padding:18px 0;position:relative;z-index:3}
+  .marquee-track{display:flex;gap:52px;width:max-content;animation:slide 34s linear infinite}
+  .marquee span{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.2em;font-weight:700;font-size:.95rem;color:#63708a;white-space:nowrap;display:flex;align-items:center;gap:52px}
+  .marquee span::after{content:"";width:6px;height:6px;background:var(--red);transform:rotate(45deg);display:block}
+  @keyframes slide{to{transform:translateX(-50%)}}
+
+  /* ---------- sections ---------- */
+  section{position:relative}
+  .sec{padding:120px 0}
+  .sec-head{max-width:760px;margin-bottom:62px}
+  .sec-head h2{margin:16px 0 0;font-size:clamp(2.4rem,6vw,4.6rem)}
+  .sec-head p{margin:20px 0 0;color:var(--muted);font-size:1.04rem;font-weight:300;max-width:620px}
+
+  /* stats */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+  .stat{padding:34px 26px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .stat:last-child{border-right:none}
+  .stat b{display:block;font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:3.1rem;line-height:1;background:linear-gradient(180deg,#fff,#8fa4d6);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .stat small{display:block;margin-top:10px;font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;color:var(--muted)}
+
+  /* about */
+  .about{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:start}
+  .about p{color:#aab3c4;font-weight:300;font-size:1.05rem}
+  .about p + p{margin-top:20px}
+  .creed{border:1px solid var(--line);background:linear-gradient(160deg,var(--surface),rgba(13,18,28,.2));padding:34px}
+  .creed h3{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.14em;font-size:1rem;margin:0 0 22px;color:#fff}
+  .creed ul{list-style:none;margin:0;padding:0}
+  .creed li{padding:14px 0;border-top:1px solid var(--line);display:flex;gap:14px;align-items:baseline;font-size:.95rem;color:#aab3c4;font-weight:300}
+  .creed li b{font-family:"Barlow Condensed",sans-serif;color:var(--blue-light);font-size:.85rem;letter-spacing:.1em;flex:0 0 26px}
+
+  /* programmes */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .card{background:var(--ink);padding:44px 34px;position:relative;transition:background .35s;overflow:hidden}
+  .card::before{content:"";position:absolute;left:0;top:0;height:3px;width:0;background:var(--grad);transition:width .45s ease}
+  .card:hover{background:var(--surface)}
+  .card:hover::before{width:100%}
+  .card .num{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:.8rem;letter-spacing:.2em;color:#3d4759}
+  .card h3{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;font-weight:800;font-size:1.7rem;margin:18px 0 14px;letter-spacing:.01em}
+  .card p{margin:0;color:var(--muted);font-size:.95rem;font-weight:300}
+  .card .tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+  .tag{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;padding:5px 11px;border:1px solid var(--line-strong);color:#9aa5b8}
+
+  /* capability rows */
+  .rows{border-top:1px solid var(--line)}
+  .row{display:grid;grid-template-columns:90px 1fr 1.1fr;gap:30px;padding:38px 0;border-bottom:1px solid var(--line);align-items:baseline;transition:.3s}
+  .row:hover{background:linear-gradient(90deg,rgba(27,69,224,.07),transparent)}
+  .row .idx{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:.85rem;letter-spacing:.2em;color:#3d4759}
+  .row h3{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;font-weight:700;font-size:1.55rem;margin:0}
+  .row p{margin:0;color:var(--muted);font-weight:300;font-size:.97rem}
+
+  /* partners */
+  .partners{background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .partner-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:14px}
+  .slot{background:var(--ink-2);aspect-ratio:16/7;display:grid;place-items:center;color:#39445a;font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.2em;font-size:.78rem;transition:.3s}
+  .slot:hover{background:var(--surface);color:#93a0b8}
+  .split{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+  .why{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:34px}
+  .why div b{display:block;font-family:"Barlow Condensed",sans-serif;font-size:1.9rem;color:#fff;line-height:1}
+  .why div span{display:block;margin-top:8px;color:var(--muted);font-size:.9rem;font-weight:300}
+
+  /* join */
+  .join-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .join{border:1px solid var(--line);padding:34px;background:linear-gradient(170deg,rgba(18,25,38,.9),rgba(8,12,20,.4));transition:.3s}
+  .join:hover{border-color:var(--line-strong);transform:translateY(-4px)}
+  .join h3{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;font-size:1.45rem;margin:0 0 12px}
+  .join p{margin:0 0 20px;color:var(--muted);font-size:.93rem;font-weight:300}
+  .join a{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.14em;font-size:.85rem;color:var(--blue-light);border-bottom:1px solid rgba(77,123,255,.35);padding-bottom:3px}
+  .join a:hover{color:#fff;border-color:#fff}
+
+  /* contact */
+  .contact{position:relative;overflow:hidden;background:linear-gradient(140deg,#070b14,#04060b)}
+  .contact::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 120% at 85% 10%,rgba(224,16,43,.20),transparent 60%),radial-gradient(70% 100% at 5% 90%,rgba(27,69,224,.22),transparent 60%)}
+  .contact .wrap{position:relative;z-index:2}
+  .contact h2{font-size:clamp(2.6rem,7vw,5.6rem);margin:16px 0 0}
+  .contact-links{display:flex;flex-wrap:wrap;gap:16px;margin-top:38px}
+  .clink{display:flex;align-items:center;gap:12px;border:1px solid var(--line-strong);padding:16px 24px;font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.13em;font-size:.95rem;transition:.25s}
+  .clink:hover{background:#fff;color:#04060b;border-color:#fff}
+  .clink svg{width:17px;height:17px;flex:0 0 auto}
+
+  footer{border-top:1px solid var(--line);padding:40px 0;background:var(--ink)}
+  .foot{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center;color:#5d6879;font-size:.85rem}
+  .foot .brand .wordmark{font-size:1.05rem}
+
+  /* reveal */
+  .rv{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
+  .rv.in{opacity:1;transform:none}
+
+  @media(max-width:1000px){
+    .menu{display:none}
+    .burger{display:flex}
+    .about,.split{grid-template-columns:1fr;gap:44px}
+    .cards,.join-grid{grid-template-columns:1fr 1fr}
+    .stats{grid-template-columns:1fr 1fr}
+    .stat:nth-child(2){border-right:none}
+    .row{grid-template-columns:60px 1fr;gap:18px}
+    .row p{grid-column:2}
+  }
+  @media(max-width:640px){
+    .wrap{padding:0 20px}
+    .sec{padding:80px 0}
+    .cards,.join-grid,.partner-grid{grid-template-columns:1fr}
+    .stats{grid-template-columns:1fr 1fr}
+    .why{grid-template-columns:1fr}
+    .hero{min-height:auto;padding:130px 0 70px}
+    .scrollcue{display:none}
+    .partner-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .rv{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap">
+    <nav class="nav">
+      <a class="brand" href="#top">
+        <div class="mark"><span>VTS</span></div>
+        <div class="wordmark">Vesta Sport<small>Racing Team</small></div>
+      </a>
+      <div class="menu">
+        <a href="#team">Team</a>
+        <a href="#programmes">Programmes</a>
+        <a href="#operations">Operations</a>
+        <a href="#partners">Partners</a>
+        <a href="#join">Join</a>
+      </div>
+      <a class="btn btn-primary" href="#contact" style="display:none" id="navcta">Get in touch</a>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button>
+    </nav>
+  </div>
+  <div class="mobile-menu" id="mm">
+    <a href="#team">Team</a>
+    <a href="#programmes">Programmes</a>
+    <a href="#operations">Operations</a>
+    <a href="#partners">Partners</a>
+    <a href="#join">Join</a>
+    <a href="#contact">Contact</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO - swap the CSS gradient background for a team photo/render if you have one -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="grid-lines"></div>
+      <div class="streaks" id="streaks"></div>
+    </div>
+    <div class="wrap hero-inner">
+      <div class="eyebrow">Vesta Sport ASD — Esports Racing Team</div>
+      <h1 class="display">
+        <span class="grad">Built</span> to<br>
+        <span class="out">go the</span><br>
+        distance
+      </h1>
+      <p class="lead">A professional sim racing team competing at the front of international endurance, sprint and single-seater championships. Real engineering, real preparation, virtual circuits.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#partners">Partner with us</a>
+        <a class="btn" href="#programmes">Our programmes</a>
+      </div>
+    </div>
+    <div class="scrollcue">Scroll</div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee">
+    <div class="marquee-track" id="mq"></div>
+  </div>
+
+  <!-- TEAM / ABOUT -->
+  <section class="sec" id="team">
+    <div class="wrap">
+      <div class="about">
+        <div class="rv">
+          <div class="eyebrow">Who we are</div>
+          <h2 class="display" style="font-size:clamp(2.4rem,6vw,4.4rem);margin:16px 0 26px">A racing team<br>that happens<br>to be virtual</h2>
+          <p>Vesta Sport is an Italian esports organisation built around one idea: a sim racing team should be run like a real one. Structured driver line-ups, a dedicated engineering group, defined race procedures and a debrief after every session.</p>
+          <p>Our crews compete across multi-class endurance events, sprint championships and single-seater series, from short-format races to the classic twenty-four hour distances. Every entry is prepared weeks in advance — car development, stint planning, fuel and tyre strategy, driver rotation and contingency plans.</p>
+          <p>Behind the drivers there is a full operations group: race engineers, strategists, spotters and media. It is the part nobody sees on the broadcast, and it is the part that decides results.</p>
+        </div>
+        <aside class="creed rv">
+          <h3>How we work</h3>
+          <ul>
+            <li><b>01</b><span><strong>Preparation over talent.</strong> Pace is built in testing, not found on race day.</span></li>
+            <li><b>02</b><span><strong>Data first.</strong> Every set-up decision is backed by telemetry and lap analysis.</span></li>
+            <li><b>03</b><span><strong>Clean racing.</strong> Finishing is a strategy. Incident-free stints win championships.</span></li>
+            <li><b>04</b><span><strong>One crew.</strong> Drivers, engineers and spotters are judged on the same result.</span></li>
+            <li><b>05</b><span><strong>Long game.</strong> We develop drivers season after season, not race by race.</span></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+    <div class="wrap" style="margin-top:80px">
+      <!-- FACT STRIP - edit these four values with the team's own figures -->
+      <div class="stats rv">
+        <div class="stat"><b>ITA</b><small>Home base</small></div>
+        <div class="stat"><b data-count="24" data-suffix="H">0</b><small>Longest race format</small></div>
+        <div class="stat"><b data-count="3" data-suffix="">0</b><small>Race programmes</small></div>
+        <div class="stat"><b>ASD</b><small>Registered sports association</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMMES -->
+  <section class="sec" id="programmes" style="background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">Programmes</div>
+        <h2 class="display">Three fronts,<br>one standard</h2>
+        <p>Separate line-ups, shared methodology. Each programme runs its own engineering group and race calendar under the same operating standard.</p>
+      </div>
+      <div class="cards">
+        <article class="card rv">
+          <div class="num">01 / Endurance</div>
+          <h3>Multi-class<br>endurance</h3>
+          <p>Our core discipline. Multi-driver crews running prototype and GT machinery over four, six, twelve and twenty-four hour distances, with full stint planning and live strategy control.</p>
+          <div class="tags"><span class="tag">Prototype</span><span class="tag">GT</span><span class="tag">Multi-class traffic</span><span class="tag">24H formats</span></div>
+        </article>
+        <article class="card rv">
+          <div class="num">02 / Sprint</div>
+          <h3>Sprint &amp;<br>championship</h3>
+          <p>Short-format championship racing where qualifying pace and race craft decide everything. Tight preparation cycles, single-lap performance work and season-long points management.</p>
+          <div class="tags"><span class="tag">GT3</span><span class="tag">GT4</span><span class="tag">Touring</span><span class="tag">Qualifying pace</span></div>
+        </article>
+        <article class="card rv">
+          <div class="num">03 / Single-seater</div>
+          <h3>Open-wheel<br>&amp; academy</h3>
+          <p>Formula racing as a development ladder. Young and emerging drivers are trained on car control, reference building and race discipline before stepping into the endurance crews.</p>
+          <div class="tags"><span class="tag">Formula</span><span class="tag">Driver development</span><span class="tag">Coaching</span><span class="tag">Talent scouting</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPERATIONS -->
+  <section class="sec" id="operations">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">Operations</div>
+        <h2 class="display">What happens<br>before the lights</h2>
+        <p>A race weekend is the last five percent of the work. This is the rest.</p>
+      </div>
+      <div class="rows">
+        <div class="row rv">
+          <div class="idx">01</div>
+          <h3>Vehicle development</h3>
+          <p>Set-up programmes built per circuit and per stint window, validated in long runs rather than single hot laps. Balance, tyre degradation and fuel sensitivity are mapped before the event.</p>
+        </div>
+        <div class="row rv">
+          <div class="idx">02</div>
+          <h3>Race strategy</h3>
+          <p>Stint plans, pit windows, safety-car scenarios and driver rotation are modelled in advance and adjusted live by a dedicated strategist on the pit wall.</p>
+        </div>
+        <div class="row rv">
+          <div class="idx">03</div>
+          <h3>Driver coaching</h3>
+          <p>Telemetry overlays, delta analysis and one-to-one review sessions. Every driver has a development plan with measurable targets across the season.</p>
+        </div>
+        <div class="row rv">
+          <div class="idx">04</div>
+          <h3>Spotting &amp; race control</h3>
+          <p>Dedicated spotters on every entry: traffic management in multi-class racing, gap calls, incident awareness and clear radio discipline for the full distance.</p>
+        </div>
+        <div class="row rv">
+          <div class="idx">05</div>
+          <h3>Media &amp; broadcast</h3>
+          <p>In-house liveries, race graphics, onboard content and social coverage that give drivers and partners visibility well beyond the chequered flag.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS - replace the .slot placeholders with <img> partner logos -->
+  <section class="sec partners" id="partners">
+    <div class="wrap">
+      <div class="split">
+        <div class="rv">
+          <div class="eyebrow">Partners</div>
+          <h2 class="display" style="font-size:clamp(2.3rem,5.5vw,4rem);margin:16px 0 22px">Your brand,<br>on the grid</h2>
+          <p class="muted" style="font-weight:300">Sim racing reaches a young, technical, highly engaged audience that watches full race distances and follows teams season after season. We build partnerships around visibility that actually gets seen: livery space, broadcast presence, social content and activation with the crew.</p>
+          <div class="why">
+            <div><b>Livery</b><span>Prime car and suit placement across every programme and every entry.</span></div>
+            <div><b>Broadcast</b><span>Hours of live coverage per event, plus onboard and replay exposure.</span></div>
+            <div><b>Social</b><span>Native content across the team channels, produced in-house.</span></div>
+            <div><b>Activation</b><span>Driver appearances, co-branded events and simulator experiences.</span></div>
+          </div>
+          <div style="margin-top:34px"><a class="btn btn-primary" href="#contact">Request the partnership deck</a></div>
+        </div>
+        <div class="rv">
+          <div class="eyebrow" style="margin-bottom:14px">Official partners</div>
+          <div class="partner-grid">
+            <div class="slot">Partner</div>
+            <div class="slot">Partner</div>
+            <div class="slot">Partner</div>
+            <div class="slot">Partner</div>
+            <div class="slot">Partner</div>
+            <div class="slot">Partner</div>
+            <div class="slot">Partner</div>
+            <div class="slot">Your logo</div>
+          </div>
+          <p class="muted" style="font-size:.85rem;margin-top:16px">Partner logos to be added.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOIN -->
+  <section class="sec" id="join">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">Join the team</div>
+        <h2 class="display">We are always<br>recruiting</h2>
+        <p>A team is not only its drivers. If you are fast, precise or simply obsessive about getting things right, there is a seat for you.</p>
+      </div>
+      <div class="join-grid">
+        <div class="join rv">
+          <h3>Drivers</h3>
+          <p>Consistency over one flying lap. We look for clean racers who can hold a reference for a full stint and work with an engineer.</p>
+          <a href="#contact">Send your profile</a>
+        </div>
+        <div class="join rv">
+          <h3>Engineers</h3>
+          <p>Set-up development, telemetry analysis and strategy modelling. Technical background welcome, curiosity mandatory.</p>
+          <a href="#contact">Apply as engineer</a>
+        </div>
+        <div class="join rv">
+          <h3>Spotters</h3>
+          <p>The calm voice on the radio. Traffic awareness, gap management and clear communication under pressure, for the full distance.</p>
+          <a href="#contact">Apply as spotter</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="sec contact" id="contact">
+    <div class="wrap">
+      <div class="rv">
+        <div class="eyebrow">Contact</div>
+        <h2 class="display">Let's talk<br>racing</h2>
+        <p class="muted" style="max-width:560px;margin-top:22px;font-weight:300">Partnerships, driver applications, media requests or a simple question about what we do — write to us and you will get a real answer.</p>
+        <div class="contact-links">
+          <a class="clink" href="mailto:info@vestasport.it">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+            info@vestasport.it
+          </a>
+          <a class="clink" href="https://www.instagram.com/vestasport.it/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            @vestasport.it
+          </a>
+          <a class="clink" href="https://linktr.ee/vestasport" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>
+            All our links
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="brand" style="display:flex;align-items:center;gap:13px">
+      <div class="mark"><span>VTS</span></div>
+      <div class="wordmark">Vesta Sport<small>ASD — Italy</small></div>
+    </div>
+    <div>&copy; <span id="yr"></span> Vesta Sport ASD — Professional sim racing team. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // header state
+  var hdr = document.getElementById('hdr');
+  var onScroll = function(){ hdr.classList.toggle('solid', window.scrollY > 40); };
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  // mobile menu
+  var burger = document.getElementById('burger'), mm = document.getElementById('mm');
+  burger.addEventListener('click', function(){
+    var open = mm.classList.toggle('show');
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  Array.prototype.forEach.call(mm.querySelectorAll('a'), function(a){
+    a.addEventListener('click', function(){ mm.classList.remove('show'); burger.classList.remove('open'); });
+  });
+
+  // marquee content
+  var items = ['Endurance Racing','24H Formats','Multi-Class GT','Prototype','Sprint Championships','Single-Seater','Driver Academy','Race Engineering','Live Strategy','Team Spotting','Since Day One'];
+  var track = document.getElementById('mq');
+  var html = items.map(function(i){ return '<span>'+i+'</span>'; }).join('');
+  track.innerHTML = html + html;
+
+  // hero streaks
+  var s = document.getElementById('streaks');
+  for(var i=0;i<7;i++){
+    var d = document.createElement('div');
+    d.className = 'streak';
+    d.style.top = (8 + Math.random()*84) + '%';
+    d.style.animationDelay = (Math.random()*5.5).toFixed(2) + 's';
+    d.style.animationDuration = (4 + Math.random()*4).toFixed(2) + 's';
+    d.style.opacity = 0;
+    s.appendChild(d);
+  }
+
+  // reveal + counters
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      e.target.classList.add('in');
+      Array.prototype.forEach.call(e.target.querySelectorAll('[data-count]'), function(el){
+        if(el.dataset.done) return;
+        el.dataset.done = '1';
+        var target = parseInt(el.dataset.count,10), suf = el.dataset.suffix || '', start = performance.now(), dur = 1200;
+        var step = function(now){
+          var p = Math.min((now-start)/dur, 1);
+          var eased = 1 - Math.pow(1-p, 3);
+          el.textContent = Math.round(target*eased) + suf;
+          if(p < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      });
+      io.unobserve(e.target);
+    });
+  }, {threshold:.18});
+  Array.prototype.forEach.call(document.querySelectorAll('.rv'), function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>
