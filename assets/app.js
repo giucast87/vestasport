@@ -7,6 +7,44 @@
     el.textContent = new Date().getFullYear();
   });
 
+  /* speed-veil page transition: the veil starts closed (covering the
+     page), opens shortly after load, and closes again before any
+     same-site navigation to give a fast "wipe" transition. */
+  var veil = document.querySelector('.speed-veil');
+  if (veil) {
+    var openVeil = function () { document.body.classList.add('veil-open'); };
+
+    requestAnimationFrame(function () { requestAnimationFrame(openVeil); });
+    window.addEventListener('pageshow', function (e) {
+      if (e.persisted) openVeil();
+    });
+
+    document.addEventListener('click', function (e) {
+      if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      var a = e.target.closest && e.target.closest('a');
+      if (!a || !a.getAttribute('href')) return;
+      if (a.target === '_blank' || a.hasAttribute('download')) return;
+      var href = a.getAttribute('href');
+      if (href.indexOf('#') === 0 || href.indexOf('mailto:') === 0 || href.indexOf('tel:') === 0) return;
+
+      var url;
+      try { url = new URL(a.href, window.location.href); } catch (err) { return; }
+      if (url.origin !== window.location.origin || url.href === window.location.href) return;
+
+      e.preventDefault();
+      document.body.classList.remove('veil-open');
+      var spans = veil.querySelectorAll('span');
+      var last = spans[spans.length - 1];
+      var go = function () {
+        if (go.done) return;
+        go.done = true;
+        window.location.href = url.href;
+      };
+      last.addEventListener('transitionend', go, { once: true });
+      setTimeout(go, 650); /* safety net in case the transition never fires */
+    });
+  }
+
   /* drawer */
   var btn = document.getElementById('drawerBtn');
   var drawer = document.getElementById('drawer');
