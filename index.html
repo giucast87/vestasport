@@ -27,8 +27,6 @@
   <a href="index.html">Home</a>
     <a href="team.html">iRacing Team</a>
     <a href="partners.html">Partners</a>
-    <a href="contact.html">Contact</a>
-    <a href="apply.html">Driver application</a>
 </nav>
 
 <div class="topbar">
@@ -39,9 +37,18 @@
     </a>
     <nav class="mainnav" aria-label="Primary">
         <a href="team.html">iRacing Team</a>
-        <a href="partners.html">Partners</a>
-        <a href="contact.html">Contact</a>
-        <a href="apply.html">Driver application</a></nav>
+        <a href="partners.html">Partners</a></nav>
+    <div class="cta-dropdown" id="ctaDropdown">
+      <button class="cta-dropdown-btn" id="ctaBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="ctaMenu" aria-label="Get in touch">
+        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 5h14v10H3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M3 5.5l7 5.5 7-5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="cta-label">Get in touch</span>
+        <svg class="chev" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="cta-menu" id="ctaMenu" role="menu" aria-label="Contact options">
+        <a href="contact.html" role="menuitem"><span class="cta-title">Contact Us</span><span class="cta-sub">General inquiries</span></a>
+        <a href="apply.html" role="menuitem"><span class="cta-title">Driver application</span><span class="cta-sub">Join the team</span></a>
+      </div>
+    </div>
   </div>
 </div>
 <main id="main">
@@ -53,11 +60,16 @@
   </div>
 </section>
 
+<div class="ticker" aria-hidden="true"><div class="ticker-track">
+  <span>Vesta Sport</span><span>Racing Team</span><span>Vesta Sport</span><span>Racing Team</span><span>Vesta Sport</span><span>Racing Team</span><span>Vesta Sport</span><span>Racing Team</span>
+  <span>Vesta Sport</span><span>Racing Team</span><span>Vesta Sport</span><span>Racing Team</span><span>Vesta Sport</span><span>Racing Team</span><span>Vesta Sport</span><span>Racing Team</span>
+</div></div>
+
 <section class="sec">
   <div class="wrap split rv">
     <h2>Welcome</h2>
     <div>
-      <p>We are an Italian <strong class="acc">sim racing</strong> team, built around one idea: a virtual racing team should be run like a real one. Structured line-ups, a dedicated engineering group, defined race procedures and a debrief after every session.</p>
+      <p class="lead">We are an Italian <strong class="acc">sim racing</strong> team, built around one idea: <span class="muted">a virtual racing team should be run like a real one.</span> Structured line-ups, a dedicated engineering group, defined race procedures and a debrief after every session.</p>
       <p>We compete across multi-class endurance events, sprint championships and single-seater series &mdash; from short-format races to the classic twenty-four hour distances.</p>
       <p>Stay updated by checking us out on social media.</p>
       <div class="socials">
@@ -90,7 +102,7 @@
   <div class="wrap">
     <div class="card rv">
       <div>
-        <span class="badge" style="background:var(--accent-2)">UPDATE</span>
+        <span class="badge red">UPDATE</span>
         <h2>Our liveries, our identity</h2>
         <p>White, blue and red. Every car that leaves our garage carries the same identity across every class we race in, from GT3 machinery to single-seaters.</p>
         <p>Livery design, race graphics, onboard content and social coverage are produced in-house &mdash; visibility that keeps working long after the chequered flag.</p>

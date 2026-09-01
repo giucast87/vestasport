@@ -81,6 +81,57 @@
     window.addEventListener('resize', onScroll);
   }
 
+  /* contact/apply dropdown */
+  var ctaDropdown = document.getElementById('ctaDropdown');
+  if (ctaDropdown) {
+    var ctaBtn = document.getElementById('ctaBtn');
+    var ctaMenu = document.getElementById('ctaMenu');
+    var setCta = function (open) {
+      ctaDropdown.classList.toggle('open', open);
+      ctaBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+    ctaBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      setCta(!ctaDropdown.classList.contains('open'));
+    });
+    document.addEventListener('click', function (e) {
+      if (!ctaDropdown.contains(e.target)) setCta(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') setCta(false);
+    });
+    ctaMenu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { setCta(false); });
+    });
+  }
+
+  /* animated nav indicator: a glider pill slides between links on
+     hover and rests under the current page when the pointer leaves. */
+  var mainnav = document.querySelector('.mainnav');
+  if (mainnav) {
+    var glider = document.createElement('span');
+    glider.className = 'nav-glider';
+    glider.setAttribute('aria-hidden', 'true');
+    mainnav.appendChild(glider);
+    var navLinks = mainnav.querySelectorAll('a');
+    var current = mainnav.querySelector('a[aria-current="page"]');
+    var moveGlider = function (el) {
+      if (!el) { glider.classList.remove('on'); return; }
+      var r = el.getBoundingClientRect();
+      var nr = mainnav.getBoundingClientRect();
+      glider.style.width = r.width + 'px';
+      glider.style.transform = 'translateX(' + (r.left - nr.left) + 'px)';
+      glider.classList.add('on');
+    };
+    navLinks.forEach(function (a) {
+      a.addEventListener('mouseenter', function () { moveGlider(a); });
+      a.addEventListener('focus', function () { moveGlider(a); });
+    });
+    mainnav.addEventListener('mouseleave', function () { moveGlider(current); });
+    window.addEventListener('resize', function () { moveGlider(current); });
+    moveGlider(current);
+  }
+
   /* reveal on scroll + counters */
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
