@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found » Vesta Sport</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="This page doesn't exist — head back to the Vesta Sport home page.">
+<meta property="og:title" content="Page not found » Vesta Sport">
+<meta property="og:description" content="This page doesn't exist — head back to the Vesta Sport home page.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230a1a4a'/%3E%3Cstop offset='.5' stop-color='%232f62ff'/%3E%3Cstop offset='1' stop-color='%23e0102b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='8' fill='url(%23g)'/%3E%3Cpath d='M16 20h8l8 18 8-18h8L34 48h-4z' fill='white'/%3E%3C/svg%3E">
+<style>
+  .notfound{min-height:70vh;display:grid;place-items:center;text-align:center;padding:80px 26px}
+  .notfound .kicker{
+    display:inline-flex;align-items:center;gap:9px;background:rgba(224,16,43,.14);border:1px solid rgba(224,16,43,.3);
+    color:#ff6b7d;padding:7px 18px;border-radius:var(--radius-pill);font-size:.78rem;font-weight:600;
+    letter-spacing:.06em;text-transform:uppercase;margin-bottom:26px;
+  }
+  .notfound .dot{width:7px;height:7px;flex:0 0 auto;border-radius:50%;background:#ff6b7d;animation:nfPulse 1.6s ease-in-out infinite}
+  @keyframes nfPulse{0%,100%{opacity:1}50%{opacity:.3}}
+  .notfound .code{
+    font-family:var(--font-display);font-weight:800;font-size:clamp(4.5rem,14vw,8rem);line-height:1;letter-spacing:-.02em;
+    background:linear-gradient(135deg,#7c9bff,#2f62ff 45%,#e0102b);-webkit-background-clip:text;background-clip:text;color:transparent;
+    margin-bottom:6px;
+  }
+  .notfound h1{font-size:clamp(1.6rem,3.6vw,2.2rem);max-width:640px;margin:0 auto 16px}
+  .notfound p{max-width:520px;margin:0 auto 32px;color:var(--grey);font-size:1.02rem}
+  .notfound .links{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 30px}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="speed-veil" aria-hidden="true"><span></span><span></span><span></span></div>
+
+<button class="drawer-btn" id="drawerBtn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="drawer">
+  <i></i><i></i><i></i>
+</button>
+<div class="scrim" id="scrim"></div>
+<nav class="drawer" id="drawer" aria-label="Main">
+  <div class="lbl">Menu</div>
+  <a href="index.html">Home</a>
+    <a href="team.html">iRacing Team</a>
+    <a href="partners.html">Partners</a>
+</nav>
+
+<div class="topbar">
+  <div class="wrap">
+    <a class="logo" href="index.html">
+      <span class="tile">VTS</span>
+      <span class="name">VESTA SPORT<small>RACING TEAM</small></span>
+    </a>
+    <nav class="mainnav" aria-label="Primary">
+        <a href="team.html">iRacing Team</a>
+        <a href="partners.html">Partners</a></nav>
+    <div class="cta-dropdown" id="ctaDropdown">
+      <button class="cta-dropdown-btn" id="ctaBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="ctaMenu" aria-label="Get in touch">
+        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 5h14v10H3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M3 5.5l7 5.5 7-5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="cta-label">Get in touch</span>
+        <svg class="chev" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="cta-menu" id="ctaMenu" role="menu" aria-label="Contact options">
+        <a href="contact.html" role="menuitem"><span class="cta-title">Contact Us</span><span class="cta-sub">General inquiries</span></a>
+        <a href="apply.html" role="menuitem"><span class="cta-title">Driver application</span><span class="cta-sub">Join the team</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+<main id="main">
+<section class="notfound">
+  <div>
+    <div class="kicker"><span class="dot"></span>Off track</div>
+    <div class="code">404</div>
+    <h1>This page took a wrong turn</h1>
+    <p>The page you're looking for is a missing corner &mdash; let's get back on the racing line.</p>
+    <div class="links">
+      <a class="inline" href="index.html">Back to home</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="foot-media"><img src="assets/img/footer.jpg" alt="" loading="lazy"></div>
+  <div class="wrap foot-inner">
+    <div class="foot-partners">
+      <div class="fslot">PARTNER</div>
+      <div class="fslot">PARTNER</div>
+      <div class="fslot">PARTNER</div>
+      <div class="fslot">PARTNER</div>
+    </div>
+    <div class="foot-links">
+      <a href="privacy-policy.html">Privacy policy</a>
+      <a href="mailto:info@vestasport.it">info@vestasport.it</a>
+      <div class="cr">&copy; <span data-year></span> Vesta Sport ASD</div>
+      <div class="made">Professional sim racing team &mdash; Italy</div>
+    </div>
+  </div>
+</footer>
+<script src="assets/app.js"></script>
+</body>
+</html>

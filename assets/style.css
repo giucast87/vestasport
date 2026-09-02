@@ -188,9 +188,8 @@ body.veil-open .speed-veil span{transform:skewX(-6deg) translateX(180vw)}
 /* ---------- ticker (scrolling brand strip) ---------- */
 .ticker{overflow:hidden;background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0}
 .ticker-track{display:flex;width:max-content;animation:tickerScroll 26s linear infinite}
-.ticker-track span{display:inline-flex;align-items:center;font-family:var(--font-display);font-weight:700;font-size:.92rem;letter-spacing:.16em;text-transform:uppercase;color:var(--grey-2);padding:0 22px;white-space:nowrap}
-.ticker-track span:nth-child(even){color:var(--accent-bright)}
-.ticker-track span::after{content:"\2022";margin-left:22px;color:var(--grey-2);opacity:.5}
+.ticker-track>span{display:inline-flex;align-items:center;font-family:var(--font-display);font-weight:700;font-size:.92rem;letter-spacing:.16em;text-transform:uppercase;color:var(--grey-2);padding:0 22px;white-space:nowrap}
+.ticker-track>span::after{content:"\2022";margin-left:22px;color:var(--grey-2);opacity:.5}
 @keyframes tickerScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* ---------- generic sections ---------- */
