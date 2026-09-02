@@ -226,9 +226,23 @@ body.veil-open .speed-veil span{transform:skewX(-6deg) translateX(180vw)}
 .card p{color:var(--grey);font-size:.97rem}
 .card p:last-child{margin-bottom:0}
 .card .shot{border-radius:16px;overflow:hidden;background:#0a0a0a}
-.card .shot img{width:100%;height:auto}
+.card .shot img{width:100%;height:auto;display:block}
+.card.rev .shot{order:-1}
 a.inline{display:inline-block;color:var(--accent-bright);font-weight:600;border-bottom:1px solid rgba(124,155,255,.4);transition:color .2s,border-color .2s,transform .2s var(--ease-out-fast)}
 a.inline:hover{color:#fff;border-color:#fff;transform:translateX(4px)}
+
+/* ---------- discipline cards (Race programmes) ---------- */
+.disciplines{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:50px}
+.discipline{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);
+  transition:transform .35s var(--ease-speed),border-color .35s;
+}
+.discipline:hover{transform:translateY(-6px);border-color:rgba(124,155,255,.35)}
+.discipline .dshot{aspect-ratio:16/10;overflow:hidden;background:#0a0a0a}
+.discipline .dshot img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease-speed)}
+.discipline:hover .dshot img{transform:scale(1.07)}
+.discipline h3{font-size:1.15rem;font-weight:700;margin:22px 24px 8px}
+.discipline p{color:var(--grey);font-size:.92rem;line-height:1.55;margin:0 24px 24px}
 
 /* ---------- counters ---------- */
 .counters{display:flex;justify-content:center;gap:0;margin-top:34px}
@@ -330,6 +344,8 @@ footer{position:relative;background:#0a0a0a;border-top:1px solid var(--line);ove
   .topbar .wrap{padding-left:88px}   /* clear the fixed burger */
   .drawer-btn{opacity:1;pointer-events:auto;transform:none}
   .split,.card,.partner{grid-template-columns:1fr;gap:32px}
+  .card.rev .shot{order:0}
+  .disciplines{grid-template-columns:1fr 1fr}
   .roster{grid-template-columns:1fr 1fr}
   .contact-panel{grid-template-columns:1fr;margin-top:-40px}
   .foot-partners{justify-content:center}
@@ -339,6 +355,7 @@ footer{position:relative;background:#0a0a0a;border-top:1px solid var(--line);ove
   .sec{padding:70px 0}
   .card,.partner{padding:30px}
   .contact-panel{padding:30px}
+  .disciplines{grid-template-columns:1fr}
   .roster{grid-template-columns:1fr}
   .frow{grid-template-columns:1fr}
   .counters{flex-wrap:wrap;gap:22px}
