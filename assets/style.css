@@ -81,8 +81,18 @@ body.veil-open .speed-veil span{transform:skewX(-6deg) translateX(180vw)}
 .logo .name{font-family:var(--font-display);font-weight:700;font-size:1.18rem;line-height:1.05;letter-spacing:0}
 .logo .name small{display:block;font-size:.62rem;font-weight:600;letter-spacing:.18em;color:var(--grey-2);text-transform:uppercase}
 
-/* ---------- contact/apply dropdown ---------- */
-.cta-dropdown{grid-column:3;justify-self:end;position:relative}
+/* ---------- contact button ---------- */
+.cta-btn-wrapper{grid-column:3;justify-self:end}
+.cta-btn{
+  display:inline-flex;align-items:center;gap:8px;font:inherit;font-family:var(--font-display);font-weight:600;font-size:.88rem;
+  color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent-2));border:0;padding:10px 20px;
+  border-radius:var(--radius-pill);white-space:nowrap;cursor:pointer;text-decoration:none;
+  transition:all .25s var(--ease-out-fast);box-shadow:0 8px 24px -8px rgba(47,98,255,.4)
+}
+.cta-btn:hover{
+  background:linear-gradient(135deg,var(--accent-2),#ff2942);transform:translateY(-2px);
+  box-shadow:0 10px 36px -10px rgba(224,16,43,.6)
+}
 .cta-dropdown-btn{
   display:flex;align-items:center;gap:8px;font:inherit;font-family:var(--font-display);font-weight:600;font-size:.88rem;
   color:var(--white);background:var(--accent);border:0;padding:10px 20px;border-radius:var(--radius-pill);white-space:nowrap;cursor:pointer;
@@ -294,6 +304,7 @@ a.inline:hover{color:#fff;border-color:#fff;transform:translateX(4px)}
   width:100%;background:#fff;color:#000;border:0;border-radius:10px;padding:13px 14px;
   font-family:inherit;font-size:.95rem;
 }
+.field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M5 7.5l5 5 5-5' stroke='%232f62ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;background-size:20px;padding-right:36px;cursor:pointer}
 .field textarea{min-height:110px;resize:vertical}
 .field input[type=file]{padding:10px;font-size:.85rem}
 .field input:focus,.field textarea:focus,.field select:focus{outline:3px solid var(--accent);outline-offset:1px}

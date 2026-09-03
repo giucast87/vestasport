@@ -38,16 +38,8 @@
     <nav class="mainnav" aria-label="Primary">
         <a href="team.html">iRacing Team</a>
         <a href="partners.html">Partners</a></nav>
-    <div class="cta-dropdown" id="ctaDropdown">
-      <button class="cta-dropdown-btn" id="ctaBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="ctaMenu" aria-label="Get in touch">
-        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 5h14v10H3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M3 5.5l7 5.5 7-5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span class="cta-label">Get in touch</span>
-        <svg class="chev" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <div class="cta-menu" id="ctaMenu" role="menu" aria-label="Contact options">
-        <a href="contact.html" role="menuitem" aria-current="page"><span class="cta-title">Contact Us</span><span class="cta-sub">General inquiries</span></a>
-        <a href="apply.html" role="menuitem"><span class="cta-title">Driver application</span><span class="cta-sub">Join the team</span></a>
-      </div>
+    <div class="cta-btn-wrapper">
+      <a href="contact.html" class="cta-btn">Contact Us</a>
     </div>
   </div>
 </div>
@@ -75,8 +67,8 @@
   <div class="wrap">
     <div class="contact-card rv">
       <div class="contact-card-header">
-        <h2>Let's talk</h2>
-        <p>Pick the channel that works best for you</p>
+        <h2>Pit Crew Ready</h2>
+        <p>Choose your racing line to connect with us</p>
       </div>
       
       <div class="contact-methods">
@@ -85,9 +77,9 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3h4l2 5-3 2a13 13 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>
           </div>
           <div class="contact-content">
-            <h3>Call us</h3>
+            <h3>Red flag alert</h3>
             <a href="tel:+39000000000" class="contact-link">+39 000 000 0000</a>
-            <p class="contact-meta">Best for quick questions and urgent updates</p>
+            <p class="contact-meta">Emergency lane – for quick response</p>
           </div>
         </div>
         
@@ -96,9 +88,9 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
           </div>
           <div class="contact-content">
-            <h3>Email us</h3>
+            <h3>Pit board message</h3>
             <a href="mailto:info@vestasport.it" class="contact-link">info@vestasport.it</a>
-            <p class="contact-meta">We usually reply within one business day</p>
+            <p class="contact-meta">We'll be on track to respond within 24 hours</p>
           </div>
         </div>
         
@@ -107,7 +99,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
           </div>
           <div class="contact-content">
-            <h3>Follow us or send a DM</h3>
+            <h3>Behind the scenes</h3>
             <div class="contact-links-group">
               <a href="https://www.instagram.com/vestasport.it/" target="_blank" rel="noopener" class="contact-link">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
@@ -115,10 +107,10 @@
               </a>
               <a href="https://linktr.ee/vestasport" target="_blank" rel="noopener" class="contact-link">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>
-                All our links
+                All our channels
               </a>
             </div>
-            <p class="contact-meta">For news, updates and a closer look at the team</p>
+            <p class="contact-meta">Live updates, qualifying sessions & team exclusives</p>
           </div>
         </div>
       </div>
@@ -126,17 +118,23 @@
       <div class="contact-divider"></div>
       
       <div class="contact-form-section">
-        <h3>Send us a message</h3>
-        <p>Use the form below and we'll get back to you shortly</p>
+        <h3>Jump in the driver's seat</h3>
+        <p>Ready to compete, partner up, or join the race? Let's roll.</p>
         <form class="contact-form" data-demo>
           <div class="frow">
-            <div class="field"><label for="c-name">Name</label><input id="c-name" name="name" required></div>
+            <div class="field"><label for="c-name">Driver Name</label><input id="c-name" name="name" required></div>
             <div class="field"><label for="c-mail">Email</label><input id="c-mail" name="email" type="email" required></div>
           </div>
-          <div class="field"><label for="c-sub">Subject</label><input id="c-sub" name="subject"></div>
-          <div class="field"><label for="c-msg">Message</label><textarea id="c-msg" name="message" style="min-height:150px" required></textarea></div>
-          <button class="submit" type="submit">Send message</button>
-          <div class="form-note">Your message will be sent securely and handled with care.</div>
+          <div class="field"><label for="c-type">Race Type</label><select id="c-type" name="inquiry_type" required>
+            <option value="">Choose your lane</option>
+            <option value="partnership">Sponsorship & Partnerships</option>
+            <option value="driver">Driver Application</option>
+            <option value="media">Media & Broadcasting</option>
+            <option value="general">General Inquiry</option>
+          </select></div>
+          <div class="field"><label for="c-msg">Your message</label><textarea id="c-msg" name="message" style="min-height:150px" placeholder="Tell us what's on your mind..." required></textarea></div>
+          <button class="submit" type="submit">Full throttle</button>
+          <div class="form-note">End-to-end encrypted. Your data stays in the garage.</div>
         </form>
       </div>
     </div>
